@@ -2,7 +2,7 @@ package packaging;
 
 import parcel.Parcel;
 
-public class CorrugatedCardboardBox<allowed> extends Filable {
+public class CorrugatedCardboardBox extends Insertable {
 
     public CorrugatedCardboardBox() {
         capacity = 1;

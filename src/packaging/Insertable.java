@@ -4,10 +4,13 @@ import parcel.Parcel;
 
 import java.util.LinkedList;
 
-abstract class Filable extends Packaging {
+abstract class Insertable extends Packaging {
 
     LinkedList innerItems = new LinkedList();
-    LinkedList<PackagingType> allowed = new LinkedList();
+
+    public Insertable(PackagingType packagingType) {
+        super(packagingType);
+    }
 
     abstract boolean insert(Parcel parcel);
 

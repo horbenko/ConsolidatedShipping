@@ -1,7 +1,8 @@
 package packaging;
 
 public class WoodenBox extends Packaging {
-    WoodenBox() {
+
+    public WoodenBox() {
         capacity = 6;
         packingType = PackagingType.WOODEN_BOX;
     }

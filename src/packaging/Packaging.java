@@ -1,14 +1,13 @@
 package packaging;
 
-import parcel.Parcel;
-
-public class Packaging extends Parcel {
+public class Packaging {
     float capacity;
     float fullness;
     PackagingType packingType;
 
-    public Packaging() {
+    public Packaging(PackagingType packagingType) {
         fullness = 0;
+
     }
 
     public float getCapacity() {
@@ -19,21 +18,13 @@ public class Packaging extends Parcel {
         return fullness;
     }
 
-    public boolean setFullness(float fullness) {
-        if(fullness + this.fullness <= capacity) {
-            this.fullness += fullness;
-            return true;
-        }
-        else return false;
-    }
-
     public PackagingType getPackingType() {
         return packingType;
     }
 
     @Override
     public String toString() {
-        return "Packaging " + getClass().getSimpleName() + '{' +
+        return "Packaging." + getClass().getSimpleName() + '{' +
                 "capacity=" + capacity +
                 ", fullness=" + fullness +
                 ", packingType=" + packingType +

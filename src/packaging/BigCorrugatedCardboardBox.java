@@ -2,18 +2,18 @@ package packaging;
 
 import parcel.Parcel;
 
-public class BigCorrugatedCardboardBox extends Filable {
+public class BigCorrugatedCardboardBox extends Insertable {
 
-    BigCorrugatedCardboardBox() {
+    public BigCorrugatedCardboardBox() {
         capacity = 2;
         packingType = PackagingType.BIG_CORRUGATED_CARDBOARD_BOX;
     }
 
     @Override
     boolean insert(Parcel parcel) {
-        if(parcel.getPacking().getPackingType() == PackagingType.CARDBOARD_ENVELOPE
-                || parcel.getPacking().getPackingType() == PackagingType.AIR_BUBBLE_WRAP) {
-            if((parcel.getPacking().getCapacity() + getFullness()) < getCapacity()) {
+        if(parcel.getPackaging().getPackingType() == PackagingType.CARDBOARD_ENVELOPE
+                || parcel.getPackaging().getPackingType() == PackagingType.AIR_BUBBLE_WRAP) {
+            if((parcel.getPackaging().getCapacity() + getFullness()) < getCapacity()) {
                 innerItems.add(parcel);
                 return true;
             }

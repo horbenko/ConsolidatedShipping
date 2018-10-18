@@ -1,16 +1,23 @@
 package parcel;
 
-import java.math.BigDecimal;
-
 import packaging.Packaging;
+import packaging.PackagingType;
+
+import java.math.BigDecimal;
 
 public class Parcel {
 
     private BigDecimal appraisedValue;
     private float weight;
     private String trackNumber;
-    private Packaging packing;
+    private Packaging packaging;
 
+    public Parcel(BigDecimal appraisedValue, float weight, String trackNumber, PackagingType packagingType) {
+        this.appraisedValue = appraisedValue;
+        this.weight = weight;
+        this.trackNumber = trackNumber;
+        new Packaging(packagingType);
+    }
 
     public BigDecimal getAppraisedValue() {
         return appraisedValue;
@@ -21,7 +28,7 @@ public class Parcel {
             int compResult = appraisedValue.compareTo(BigDecimal.ZERO);
             if(compResult < 0) throw new IllegalArgumentException("Appraised value cannot be negative.");
         }
-        else throw new NullPointerException("Value cannot be NULL.");
+        else throw new IllegalArgumentException("Value cannot be NULL.");
     }
 
     public float getWeight() {
@@ -42,7 +49,7 @@ public class Parcel {
         else throw new IllegalArgumentException("Invalid string, use defined format.");
     }
 
-    public Packaging getPacking() {
-        return packing;
+    public Packaging getPackaging() {
+        return packaging;
     }
 }

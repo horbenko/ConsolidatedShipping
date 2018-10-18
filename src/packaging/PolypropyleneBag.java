@@ -1,7 +1,8 @@
 package packaging;
 
 public class PolypropyleneBag extends Packaging {
-    PolypropyleneBag() {
+
+    public PolypropyleneBag() {
         capacity = 4;
         packingType = PackagingType.POLYPROPYLENE_BAG;
     }
